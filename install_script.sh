@@ -7,6 +7,7 @@ git clone https://github.com/Andley302/CheckUser.git;
 clear;
 cd /root/checkuser;
 chmod +x iptables.sh;
+./iptables.sh;
 chmod +x startcheck.sh;
 apt-get install npm -y;
 apt-get  install nodejs -y;
@@ -42,6 +43,6 @@ echo "Se deseja alterar a porta ou senha,basta editar o arquivo /root/checkuser/
 set_config;
 
 
-#FINALIZAD
+#FINALIZAR
 finalizar;
 
