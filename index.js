@@ -8,12 +8,6 @@ var mysql = require('mysql');
 require('dotenv').config();
 //AQUI SEUS DADOS DO MYSQL
 var getPass = process.env.MYSQL_PASS;
-var con = mysql.createConnection({
-     host: "localhost",
-     user: "root",
-     password: getPass,
-     database: "sshplus"
-});
 
 
 var app = express();
@@ -39,21 +33,30 @@ if (process.env.HTTPS == 1) { //with ssl
 } else { //http
     app.listen(scriptPort, () => {
         console.log("Http server running on port " + scriptPort);
-		console.log("MySQLDB Pass: " + getPass);
     });
 }//http
 
 app.post("/checkUser", async function checkUser(req,user) {
 	var usertoCheck = req.body.user;
+	
 	connectToDatabase(usertoCheck,user);
 });//sendText
 
 async function connectToDatabase(usertoCheck,user){
+	//CRIA NOVA CONEXAO
+	var con = mysql.createConnection({ 
+    host : "localhost",
+    database : "sshplus",
+    user : "root",
+    password : getPass
+});
+
 	resultToReturn = '';
     con.connect(function(err) {
       if (err) throw err;
         con.query("SELECT * FROM usuario_ssh", function (err, result, fields) {
           if (err) throw err;
+		   
           //console.log(result);
 		  
 		  //CONSULTA USUÁRIO
@@ -61,6 +64,8 @@ async function connectToDatabase(usertoCheck,user){
 		  var getUser  = resultToParse.filter(function (selection){ 
                return selection.login === usertoCheck;
           });	
+		  
+		 
 
 		  //PEGA DATA 
 		  var getData = getUser[0].data_validade;
@@ -79,7 +84,7 @@ async function connectToDatabase(usertoCheck,user){
 		  console.log(resultToSend);
 	
         });
-	
+
     });
     return resultToReturn;
 }
