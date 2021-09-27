@@ -5,6 +5,7 @@ sleep 5;
 apt-get update && apt-get install git crontab -y;
 git clone https://github.com/Andley302/CheckUser.git;
 clear;
+mkdir /root/checkuser;
 cd /root/checkuser;
 chmod +x iptables.sh;
 ./iptables.sh;
