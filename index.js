@@ -9,8 +9,6 @@ var format = require('date-format');
 require('dotenv').config();
 //AQUI SEUS DADOS DO MYSQL
 var getPass = process.env.MYSQL_PASS;
-
-
 var app = express();
 
 app.use(cors());
