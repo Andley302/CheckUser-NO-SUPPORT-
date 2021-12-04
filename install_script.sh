@@ -1,8 +1,8 @@
 #!/bin/bash
 #INSTALA PACOTES
-echo -ne "\033[1;32m INSTALADOR CheckUser!INICIANDO...\033[1;37m ";
+echo -ne "\033[1;32m INSTALADOR CHECKUSER FREE...\033[1;37m ";
 sleep 5;
-apt-get update && apt-get install git crontab -y;
+apt-get update && apt-get install git crontab screen -y;
 git clone https://github.com/Andley302/CheckUser.git;
 cd /root/CheckUser;
 clear;
