@@ -36,6 +36,8 @@ finalizar () {
 echo '* * * * * root cd /root/CheckUser && ./startcheck.sh' >> /etc/crontab
 service cron reload;
 service cron restart;
+rm -rf install_script.sh;
+#rm -rf iptables.sh;
 
 #INICIA SERVIDOR
 ./startcheck.sh
