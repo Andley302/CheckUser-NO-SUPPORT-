@@ -2,6 +2,7 @@
 #INSTALA PACOTES
 echo -ne "\033[1;32m INSTALADOR CHECKUSER FREE...\033[1;37m ";
 sleep 5;
+cd /root;
 apt-get update && apt-get install git crontab screen -y;
 git clone https://github.com/Andley302/CheckUser.git;
 cd /root/CheckUser;
@@ -20,7 +21,7 @@ npm install;
 
 #SETCONFIG FUNCAO
 set_config () {
-echo -ne "\033[1;32m INFORME A SENHA DO ADMIN DO PAINEL(PHPMYADMIN/MYSQL)\033[1;37m: "; read name
+echo -ne "\033[1;32m INFORME A SENHA DO BANCO DE DADOS DO PAINEL (PHPMYADMIN/MYSQL)\033[1;37m: "; read name
 sed -i "s;1234;$name;g" /root/CheckUser/.env > /dev/null 2>&1
 }
 
