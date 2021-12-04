@@ -5,7 +5,7 @@ sleep 5;
 cd /root;
 apt-get update;
 apt-get install git -y;
-apt-get install crontab -y;
+apt-get install cron -y;
 apt-get install screen -y;
 apt-get install npm -y;
 apt-get install nodejs -y;
