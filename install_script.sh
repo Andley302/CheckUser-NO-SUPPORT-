@@ -3,19 +3,24 @@
 echo -ne "\033[1;32m INSTALADOR CHECKUSER FREE...\033[1;37m ";
 sleep 5;
 cd /root;
-apt-get update && apt-get install git crontab screen -y;
+apt-get update;
+apt-get install git -y;
+apt-get install crontab -y;
+apt-get install screen -y;
+apt-get install npm -y;
+apt-get install nodejs -y;
 git clone https://github.com/Andley302/CheckUser.git;
 cd /root/CheckUser;
 clear;
 chmod +x iptables.sh;
 ./iptables.sh;
 chmod +x startcheck.sh;
-apt-get install npm -y;
-apt-get  install nodejs -y;
 wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh
 chmod +x install.sh;
 ./install.sh
 source ~/.bashrc;
+source ~/.nvm/nvm.sh;
+#git clone http://github.com/creationix/nvm.git .nvm;
 nvm install 16.4.2;
 npm install;
 
