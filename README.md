@@ -1,5 +1,6 @@
 # CheckUser - API para checagem da validade de logins ssh em banco de dados SQL usando JavaScript
 
+# Este projeto está funcionando, mas não há mais suporte do desenvolvedor em caso de erros, favor não insista!
 
 Esta API serve para consulta de validade de logins ssh salvos em banco de dados SQL,usado em painéis de gerenciamento de logins SSH,como SSHPlus.
 Após a instalação da API do lado do servidor,você pode implementar em seu aplicativo para fazer as requests,adapte e use a seu gosto!
